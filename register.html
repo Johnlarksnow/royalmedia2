@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Custom Design and Development Services | Halo Lab</title>
+    <meta name="title" content="Custom Design and Development Services | Halo Lab">
+    <meta name="description"
+        content="Halo Lab is an award-winning custom web design and development company ⭐ Our team offer a reliable, customized and user-friendly solution for your business.">
+    <meta name="keywords" content="Halo Lab">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+
+    <link rel="stylesheet" href="public/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyClLc025WWyzfzGzLifmR3G3L_aZt57Uh8",
+            authDomain: "Ahalo-d1e71.firebaseapp.com",
+            projectId: "halo-d1e71",
+            storageBucket: "halo-d1e71.appspot.com",
+            messagingSenderId: "980123955835",
+            appId: "1:980123955835:web:2be2ca19991809852868de"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        function login() {
+            var email = document.getElementById("login-email").value;
+            var password = document.getElementById("login-password").value;
+
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(function (user) {
+                    var message = "Logged in successfully!";
+                    document.getElementById("login-message").textContent = message;
+                    // Redirect or perform any additional logic
+                })
+                .catch(function (error) {
+                    var message = error.message;
+                    document.getElementById("login-message").textContent = message;
+                });
+        }
+
+        function register() {
+            var email = document.getElementById("register-email").value;
+            var password = document.getElementById("register-password").value;
+
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(email, password)
+                .then(function (user) {
+                    var message = "Registered successfully!";
+                    document.getElementById("register-message").textContent = message;
+                    // Redirect to login.html
+                    window.location.replace("login.html");
+                })
+                .catch(function (error) {
+                    var message = error.message;
+                    document.getElementById("register-message").textContent = message;
+                });
+        }
+    </script>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:40vh;
+       
+        font-family: Arial, sans-serif;
+    }
+
+    #register-form {
+        background-color: #222146;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #02021E;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #register-message {
+        text-align: center;
+        margin-top: 10px;
+        color: #888888;
+    }
+
+    @media only screen and (max-width: 480px) {
+        #register-form {
+            width: 90%;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+    <header class="main-header new-main-header">
+		<section class="banner hidden" id="donation-banner" data-test-cy="donation-banner">
+			<p class="banner-text">Premium leaks, videos, and more 50% off on checkout</p><button type="button"
+				class="close-banner-button" aria-label="close banner" data-test-cy="close-banner"></button>
+		</section>
+		<div class="top-line new-top-line max-possible-width-constraint" data-test-cy="main header"><a href="/"
+				class="logo-button" aria-label="Halo Lab logotype"><svg fill="none" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 40 40" class="logo-image">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M39.598 8.601c-3.446 1.076-6.067 3.69-7.144 7.129a.56.56 0 0 1-1.074 0c-1.076-3.439-3.698-6.053-7.143-7.129a.558.558 0 0 1 0-1.07C27.681 6.455 30.303 3.84 31.38.4a.56.56 0 0 1 1.074 0c1.077 3.44 3.698 6.055 7.144 7.13a.558.558 0 0 1 0 1.07Z"
+						fill="#FFDA93" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M19.4 40C8.702 40 0 31.316 0 20.642c0-9.055 6.172-16.81 15.01-18.858a3.237 3.237 0 0 1 3.881 2.414 3.227 3.227 0 0 1-2.418 3.872C10.675 9.414 6.467 14.7 6.467 20.642c0 7.116 5.802 12.905 12.933 12.905 6.206 0 11.55-4.412 12.706-10.492a3.23 3.23 0 0 1 3.78-2.568 3.226 3.226 0 0 1 2.574 3.771C36.724 33.38 28.709 40 19.4 40Z"
+						fill="#FFF" />
+				</svg>
+				<h1 style="margin-left: 2rem; color: white;">ROYAL MEDIA</h1>
+			</a>
+            <div class="mobile-right-column"><a class="tablet-contact-mail" href="/register.html">Register</a>
+
+			<div class="right-column mt">
+				<nav class="menu" aria-label="Main navigation" data-test-cy="nav">
+					<ul class="menu-content new-menu-content">
+						<li class="menu-item new-menu-item menu-item-has-child"><a class="menu-link new-menu-link"
+								href="/pvideos.html">Premium Videos</a></li>
+						<li class="menu-item"><a class="menu-link new-menu-link" href="/leaks.html">Leaks</a></li>
+						<li class="menu-item"><a class="menu-link new-menu-link" href="/gifs.html">4k GIFs</a></li>
+						<li class="menu-item"><a class="menu-link new-menu-link" href="https://celebsunmasked.com/celeb/the-fappening/" target="_blank">More Leaks</a></li>
+					</ul>
+				</nav><a class="contact-mail new-contact-mail" href="/register.html"
+					data-test-cy="contact-mail">Register</a>
+			</div>
+		</div>
+	</header>
+    <main>
+
+        <a href="https://moviehive.lol/" target="_blank"><div class="video-container" style="padding-top: 100px;">
+            <video style="height: 200px;" autoplay="" loop="" muted="">
+                <source src="images/ads/Moviehive.lol.mp4">
+            </video>
+        </div></a>
+        <div class="container">
+          
+            <div id="register-form">
+                <h2>Register</h2>
+                <input type="email" id="register-email" placeholder="Email" />
+                <input type="password" id="register-password" placeholder="Password" />
+                <button onclick="register()">Register</button>
+                <div id="register-message"></div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
